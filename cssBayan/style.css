@@ -4,26 +4,49 @@ body {
     rgb(221, 221, 221) 5.5%,
     rgb(110, 136, 161) 90.2%
   );
-  display: flex;
   font-family: "Roboto", sans-serif;
   text-align: center;
 }
 
 .accordion {
   margin: auto;
-  width: 400px;
-}
-
-h2 {
-    display: block;
+  width: 800px;
 }
 
 .overlay {
-  display: block;
+  display: none;
+  transition-duration: 0.8s;
 }
 
 ul {
   list-style: none;
 }
 
-h2:hover + .overlay { display: block; }
+li[open] .overlay ~ * {
+  animation: open 0.5s ease-in-out;
+}
+
+@keyframes open {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+li h2:after {
+  content: "+";
+  color: black;
+  position: absolute;
+  transform-origin: center;
+  transition: 200ms linear;
+}
+
+li[open] h2:after {
+  transform: rotate(45deg);
+}
+
+h2:hover ~ .overlay {
+  display: block;
+}
