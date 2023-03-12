@@ -19,11 +19,11 @@ h2 {
 }
 
 .overlay {
-  display: none;
+  display: block;
 }
 
 ul {
   list-style: none;
 }
 
-h2:hover ~ .overlay { display: block; }
+h2:hover + .overlay { display: block; }
