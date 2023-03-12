@@ -15,6 +15,7 @@ body {
 
 .overlay {
   display: none;
+  transition-duration: 0.8s;
 }
 
 ul {
@@ -47,6 +48,5 @@ li[open] h2:after {
 }
 
 h2:hover ~ .overlay {
-  transition: all 5s ease-in-out;
   display: block;
 }
