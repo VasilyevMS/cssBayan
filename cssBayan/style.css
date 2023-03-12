@@ -10,11 +10,7 @@ body {
 
 .accordion {
   margin: auto;
-  width: 400px;
-}
-
-h2 .icon {
-  display: inline-flex;
+  width: 800px;
 }
 
 .overlay {
@@ -25,7 +21,32 @@ ul {
   list-style: none;
 }
 
+li[open] .overlay ~ * {
+  animation: open 0.5s ease-in-out;
+}
+
+@keyframes open {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+li h2:after {
+  content: "+";
+  color: black;
+  position: absolute;
+  transform-origin: center;
+  transition: 200ms linear;
+}
+
+li[open] h2:after {
+  transform: rotate(45deg);
+}
+
 h2:hover ~ .overlay {
-  transition: all 0.5s ease-out;
+  transition: all 5s ease-in-out;
   display: block;
 }
