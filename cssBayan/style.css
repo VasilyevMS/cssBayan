@@ -1,0 +1,29 @@
+body {
+  background: linear-gradient(
+    180.3deg,
+    rgb(221, 221, 221) 5.5%,
+    rgb(110, 136, 161) 90.2%
+  );
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.accordion {
+  margin: auto;
+  width: 400px;
+}
+
+h2 {
+    display: block;
+}
+
+.overlay {
+  display: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h2:hover ~ .overlay { display: block; }
